@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+            table {
+    border-collapse: collapse;
+    width: 100%;
+    }
+
+    td, th {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+    }
+
+    .btn-group { float: right; }
+
+    #list, #insertList { /* 버튼크기를 지정 */
+        height : 40px; 
+        width : 90px;
+    }
+
+    #left-btn, #right-btn { float : right; } 
+
+    #page-numbers { float : left; }
+
+    </style>
+    </head>
+    <body>
+
+        <table>
+            <thead>
+                <tr>
+                    <th colspan="8"><h1>자유게시판</h1> 자유롭게 당신의 의견을 전해주세요! 
+                        <span class="btn-group"> <!-- 버튼 관련 class -->
+                            <button id="list">내게시물</button>
+                            <button id="insertList">글작성</button></th>
+                        </span>
+                </tr>
+                <tr>
+                    <th>번호</th>
+                    <th>글제목</th>
+                    <th>작성자</th>
+                    <th>조회수</th>
+                    <th>작성일</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>첫 번째 글</td>
+                    <td>작성자1</td>
+                    <td>10</td>
+                    <td>2023-04-04</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>두 번째 글</td>
+                    <td>작성자2</td>
+                    <td>10</td>
+                    <td>2023-04-04</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>세 번째 글</td>
+                    <td>작성자3</td>
+                    <td>10</td>
+                    <td>2023-04-04</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>네 번째 글</td>
+                    <td>작성자3</td>
+                    <td>10</td>
+                    <td>2023-04-04</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>다섯 번째 글</td>
+                    <td>작성자3</td>
+                    <td>10</td>
+                    <td>2023-04-04</td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>여섯 번째 글</td>
+                    <td>작성자3</td>
+                    <td>10</td>
+                    <td>2023-04-04</td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td>일곱 번째 글</td>
+                    <td>작성자3</td>
+                    <td>10</td>
+                    <td>2023-04-04</td>
+                </tr>
+                <tr>
+                    <td>8</td>
+                    <td>여덟 번째 글</td>
+                    <td>작성자3</td>
+                    <td>10</td>
+                    <td>2023-04-04</td>
+                </tr>
+            </tbody> 
+        </table>    
+
+        <br>
+
+        <footer>
+            <input id="left-btn" type="button" value="다음">
+            <input id="right-btn" type="button" value="이전">
+            <div id="page-numbers"></div>
+        </footer>    
+
+        <script>
+            var totalPages = 5;
+            var currentPage = 1;
+            var pageNumbers = document.getElementById("page-numbers");
+
+        // 페이지 버튼 생성
+            for (var i = 1; i <= totalPages; i++) {
+                var button = document.createElement("button");
+                    button.innerHTML = i;
+                    button.addEventListener("click", function() {
+                    currentPage = parseInt(this.innerHTML);
+                    updateButtons();
+              });
+                pageNumbers.appendChild(button);
+            }
+        </script>
+
+</body>
+</html>
